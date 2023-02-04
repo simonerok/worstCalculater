@@ -35,3 +35,28 @@ function readOperator() {
 }
 
 console.log(readOperator());
+
+/* DO THE CALCULATION */
+calc.addEventListener("click", calculate);
+
+function calculate() {
+  let operator = readOperator();
+  let firstVal = parseInt(firstNumber.value);
+  let secondVal = parseInt(secondNumber.value);
+  let result;
+
+  if (operator === "add") {
+    result = firstVal + secondVal;
+  } else if (operator === "sub") {
+    result = firstVal - secondVal;
+  } else if (operator === "mul") {
+    result = firstVal * secondVal;
+  } else if (operator === "div") {
+    result = firstVal / secondVal;
+  } else {
+    /* denne skal være der så hvis der af en eller anden grund ikke kan være et resultat hvis man fx skriver # eller andet som den ikke kan regne ud */
+    result = "Invalid operator";
+  }
+
+  console.log(result);
+}
